@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Selection</title>
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database.js"></script>
+    <!-- Your Firebase configuration snippet -->
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyDoRTRMlUHJxmWUs2bWMmyckwMLwNvSKBQ",
+            authDomain: "arcade-cffe1.firebaseapp.com",
+            projectId: "arcade-cffe1",
+            storageBucket: "arcade-cffe1.appspot.com",
+            messagingSenderId: "247396218688",
+            appId: "1:247396218688:web:0a81dff1d9b444c9b36ca5",
+            measurementId: "G-799Y3DN65W"
+            };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .arcade-container {
+            display: flex;
+            gap: 40px;
+        }
+        .arcade-machine {
+            width: 300px; /* Increased width from 200px to 250px */
+            height: 450px;
+            background-color: #333;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .screen {
+            width: 100%;
+            height: 60%;
+            background-color: #000;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        .screen img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .box:hover {
+            background-color: #45a049;
+        }
+        .controls {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .button {
+            width: 30px;
+            height: 30px;
+            background-color: red;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .button:hover {
+            background-color: darkred;
+        }
+        .start-button {
+            width: 80px;
+            height: 40px;
+            background-color: green;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+        .start-button:hover {
+            background-color: darkgreen;
+        }
+    </style>
+</head>
+<body>
+    <h1>High Scores</h1>
+    <div id="status"></div>
+    <script src="app.js"></script>
+    <div class="arcade-container">
+        <div class="arcade-machine">
+            <div class="screen">
+                <img src="images/snake.jpg" alt="Snake Game">
+            </div>
+            <div class="controls">
+                <div class="button">A</div>
+                <div class="button">B</div>
+            </div>
+            <button class="start-button" onclick="window.location.href='snake.html'">Start</button>
+        </div>
+        <div class="arcade-machine">
+            <div class="screen">
+                <img src="images/pacman.png" alt="Pac-Man Game">
+            </div>
+            <div class="controls">
+                <div class="button">A</div>
+                <div class="button">B</div>
+            </div>
+            <button class="start-button" onclick="window.location.href='pacman/index.html'">Start</button>
+        </div>
+    </div>
+</body>
+</html>
